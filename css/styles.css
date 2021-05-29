@@ -21,6 +21,8 @@
   --footer-contacts-link-color: rgba(255, 255, 255, 0.6);
   --portfolio-filter-button-background-color: #f5f4fa;
   --sotial-icon-color: #afb1b8;
+  --duration-action: 2500ms;
+  --timing-function-action: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -50,7 +52,7 @@ img {
 
 .link {
   text-decoration: none;
-  color: inherit;
+  /* color: inherit; */
 }
 
 body {
@@ -70,7 +72,6 @@ body {
   padding-bottom: 94px;
 }
 
-/* ============= COMPONENTS ============= */
 .title {
   font-weight: 700;
   font-size: 36px;
@@ -79,6 +80,7 @@ body {
   text-align: center;
 }
 
+/* ============= COMPONENTS ============= */
 .link:hover,
 .link:focus {
   color: var(--accent-color);
@@ -114,21 +116,11 @@ body {
   background-color: var(--accent-color);
 }
 
-.gallery-list-item:hover,
-.gallery-list-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
 .button {
   cursor: pointer;
   display: inline-block;
   border-radius: 4px;
   border-color: transparent;
-}
-
-.current {
-  color: var(--accent-color);
 }
 
 .vertical-padding-button {
@@ -150,6 +142,19 @@ body {
   outline: 0;
   outline-offset: 0;
 }
+
+/* .nav-menu-link,
+.mail-link,
+.tel-link,
+.contact-list-icon,
+.button,
+.social-list-link,
+.customer-list-icon,
+.team-sotial-list-icon {
+  transition-property: color, background, fill, border-color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
+} */
 /* ============= COMPONENTS END ============= */
 
 /* ============= HEADER ============= */
@@ -198,6 +203,13 @@ body {
   margin-right: 50px;
 }
 
+.nav-menu-link {
+  color: var(--main-color);
+  transition-property: color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
+}
+
 .header-contacts-list {
   display: flex;
   align-items: center;
@@ -219,7 +231,11 @@ body {
 } */
 
 .contact-list-icon {
-  fill: var(--secondary-color);
+  fill: currentColor;
+  margin-right: 10px;
+  transition-property: fill;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .header-contacts-item:not(:last-child) {
@@ -232,10 +248,14 @@ body {
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
+  color: var(--secondary-color);
+  transition-property: color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
-.contact-list-icon {
-  margin-right: 10px;
+.current {
+  color: var(--accent-color);
 }
 /* ============= HEADER END ============= */
 
@@ -277,6 +297,10 @@ body {
   background-color: var(--hero-button-background-color);
   color: var(--button-action-color);
   padding: 10px 32px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: background-color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .hero-button:hover {
@@ -405,12 +429,18 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .team-sotial-list-icon {
   /* width: 20px;
   height: 20px; */
   fill: var(--sotial-icon-color);
+  transition-property: fill;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .team-list-item-title {
@@ -459,12 +489,18 @@ body {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   border-color: var(--sotial-icon-color);
+  transition-property: border-color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .customer-list-icon {
   /* width: 106px;
   height: 60px; */
   fill: var(--sotial-icon-color);
+  transition-property: fill;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 /* ============= REGULAR CUSTOMERS END ============= */
 
@@ -512,9 +548,13 @@ body {
   margin-bottom: 9px;
 }
 
+.footer-map-link,
 .footer-tel-link,
 .footer-mail-link {
   color: var(--footer-contacts-link-color);
+  transition-property: color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .footer-title {
@@ -544,6 +584,9 @@ body {
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition-property: background-color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .footer-sotial-list-icon {
@@ -572,13 +615,17 @@ body {
   color: var(--main-color);
   background-color: var(--portfolio-filter-button-background-color);
   padding: 6px 22px;
+  transition-property: background-color, color;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .portfolio-filter-list-item:not(:last-child) {
   margin-right: 8px;
 }
 
-.portfolio-filter-button:hover {
+.portfolio-filter-button:hover,
+.portfolio-filter-button:focus {
   color: var(--button-action-color);
   background-color: var(--button-action-background-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -600,11 +647,25 @@ body {
   margin-top: 30px;
 }
 
+.gallery-list-link {
+  display: block;
+  transition-property: box-shadow;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
+}
+
+.gallery-list-link:hover,
+.gallery-list-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .gallery-list-title {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   margin-bottom: 4px;
+  color: var(--main-color);
 }
 
 .gallery-list-description {
