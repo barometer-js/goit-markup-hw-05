@@ -125,11 +125,6 @@ body {
   border-color: transparent;
 }
 
-.vertical-padding-button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -161,8 +156,8 @@ body {
 
 /* ============= HEADER ============= */
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  /* padding-top: 24px;
+  padding-bottom: 24px; */
   border-bottom: 1px solid #ececec;
 }
 
@@ -211,6 +206,11 @@ body {
   transition-property: color;
   transition-duration: var(--duration-action);
   transition-timing-function: var(--timing-function-action);
+}
+
+.vertical-padding-button {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .header-contacts-list {
@@ -264,7 +264,7 @@ body {
 .current::after {
   content: "";
   position: absolute;
-  bottom: -26px;
+  bottom: 0;
   display: block;
   height: 4px;
   width: 100%;
@@ -284,6 +284,7 @@ body {
     ),
     url(../images/hero/hero.jpg);
   background-size: cover;
+  background-position: center;
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -300,6 +301,9 @@ body {
   color: var(--main-font-color-dark-bg);
   text-transform: uppercase;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 696px;
 }
 
 .hero-button {
@@ -648,7 +652,7 @@ body {
   color: var(--main-color);
   background-color: var(--secondary-bg-color);
   padding: 6px 22px;
-  transition-property: background-color, color;
+  transition-property: background-color, color, box-shadow;
   transition-duration: var(--duration-action);
   transition-timing-function: var(--timing-function-action);
 }
@@ -758,16 +762,22 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 100;
+  transition-property: opacity, visibility;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 
 .modal {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .modal-close-button {
@@ -790,5 +800,8 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition-property: opacity, visibility;
+  transition-duration: var(--duration-action);
+  transition-timing-function: var(--timing-function-action);
 }
 /* ============= MODAL WINDOW END ============= */
